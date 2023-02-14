@@ -1,0 +1,33 @@
+const asyncScriptGenerator = async () => {
+  // Определяем источники данных, которые мы будем использовать
+  const dataSources = [
+    ‘source1’,
+    ‘source2’,
+    ‘source3’,
+  ];
+
+  // Создаем пустой массив для хранения данных
+  const data = [];
+
+  // Запускаем цикл для получения данных из источников
+  for (let i = 0; i < dataSources.length; i++) {
+    // Используем асинхронный запрос для получения данных
+    const response = await fetch(dataSources[i]);
+    // Преобразуем полученные данные в json
+    const jsonResponse = await response.json();
+    // Добавляем данные в массив
+    data.push(jsonResponse);
+  }
+
+  // Запускаем цикл для обработки данных
+  for (let i = 0; i < data.length; i++) {
+    // Обрабатываем данные
+    // ...
+
+    // Сохраняем данные
+    // ...
+  }
+
+  // Возвращаем данные
+  return data;
+};
